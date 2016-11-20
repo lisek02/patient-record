@@ -1,0 +1,18 @@
+<ion-list>
+  <ion-item>
+    <h2 class='bold'>Name</h2>
+    <p>{{ patient.firstName }} {{ patient.lastName }}</p>
+  </ion-item>
+  <ion-item>
+    <h2 class='bold'>Birth date</h2>
+    <p>{{ patient.birthDate | date }}</p>
+  </ion-item>
+  <ion-item>
+    <h2 class='bold'>Gender</h2>
+    <p>{{ patient.gender }}</p>
+  </ion-item>
+  <ion-item>
+    <h2 class='bold'>Address</h2>
+    <p>{{ patient.address }}, {{ patient.postalCode }} {{ patient.city }}</p>
+  </ion-item>
+</ion-list>

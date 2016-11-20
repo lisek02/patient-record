@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Patient</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <patient-details [patient]='patientData'></patient-details>
+</ion-content>
+<ion-fab right bottom>
+  <button ion-fab><ion-icon name="create"></ion-icon></button>
+</ion-fab>
