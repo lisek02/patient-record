@@ -1,27 +1,14 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-
-import { PatientComponent } from './patient/patient.component';
 
 @Component({
   templateUrl: 'app.component.html'
 })
+
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
-
-  rootPage: any = PatientComponent;
-
-  pages: Array<{title: string, component: any}>;
-
   constructor(public platform: Platform) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Patient', component: PatientComponent },
-    ];
-
   }
 
   initializeApp() {
@@ -31,11 +18,5 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
-  }
-
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
   }
 }
