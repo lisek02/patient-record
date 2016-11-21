@@ -1,0 +1,47 @@
+@import '../../theme/variables';
+
+ion-menu {
+  &.navigation {
+
+    ion-header {
+      background-color: map-get($colors, primary);
+
+      ion-list {
+        margin: 0;
+        padding: 5px 0;
+
+        ion-item {
+          &.item-md {
+            background-color: map-get($colors, primary);
+            color: $white;
+          }
+        }
+      }
+    }
+
+    ion-content {
+      ion-list {
+        margin: 0;
+        padding: 10px 0;
+
+        ion-item {
+          padding-left: 0px;
+
+          .item-inner {
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .item-md {
+    ion-avatar {
+      img {
+        max-width: 6rem;
+        max-height: 6rem;
+        border-radius: 3rem;
+      }
+    }
+  }
+}

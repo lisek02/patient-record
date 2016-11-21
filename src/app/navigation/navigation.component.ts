@@ -1,21 +1,33 @@
 import { Component, ViewChild } from '@angular/core';
+import { ViewEncapsulation } from '@angular/core';
 import { Nav } from 'ionic-angular';
 import { PatientComponent } from '../patient/patient.component';
 
 @Component({
   selector: 'navigation',
-  templateUrl: 'navigation.html'
+  templateUrl: 'navigation.html',
+  styles: ['navigation.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 
 export class NavigationComponent {
   @ViewChild(Nav) nav: Nav;
   rootPage: any = PatientComponent;
   pages: Array<{title: string, component: any}>;
+  basicPatientData: { firstName: string, lastName: string, image: string };
 
   constructor() {
     this.pages = [
         { title: 'Patient', component: PatientComponent },
+        { title: 'Visits', component: PatientComponent },
+        { title: 'Prescriptions', component: PatientComponent },
+        { title: 'Examinations', component: PatientComponent }
     ];
+    this.basicPatientData = {
+      firstName: 'Jan',
+      lastName: 'Kowalski',
+      image: 'assets/images/mr_potatoe.png'
+    }
   }
 
   openPage(page) {
