@@ -1,0 +1,18 @@
+@import '../../../theme/variables';
+
+.title-bar {
+  .toolbar-background-md {
+    border-color: #b2b2b2;
+    background: map-get($colors, primary);
+  }
+
+  button {
+    &.bar-button-default-md {
+      color: $white;
+    }
+  }
+
+  .toolbar-title-md {
+    color: $white;
+  }
+}
