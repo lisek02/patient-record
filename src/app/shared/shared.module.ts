@@ -12,6 +12,7 @@ import { TitleBarComponent } from './title-bar/title-bar.component';
     TitleBarComponent
   ],
   exports: [
+    CommonModule,
     TitleBarComponent
   ],
   providers: [ ]
