@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { NavigationModule } from './navigation/navigation.module';
 import { PatientModule } from './patient/patient.module';
 import { PrescriptionsModule } from './prescriptions/prescriptions.module';
+import { ExaminationsModule } from './examinations/examinations.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PrescriptionsModule } from './prescriptions/prescriptions.module';
     IonicModule.forRoot(MyApp),
     NavigationModule,
     PatientModule,
-    PrescriptionsModule
+    PrescriptionsModule,
+    ExaminationsModule
   ],
   bootstrap: [
     IonicApp

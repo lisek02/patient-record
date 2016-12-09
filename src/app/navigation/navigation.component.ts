@@ -3,6 +3,7 @@ import { ViewEncapsulation } from '@angular/core';
 import { Nav } from 'ionic-angular';
 import { PatientComponent } from '../patient/patient.component';
 import { PrescriptionsComponent } from '../prescriptions/prescriptions.component';
+import { ExaminationsComponent } from '../examinations/examinations.component';
 
 @Component({
   selector: 'navigation',
@@ -22,7 +23,7 @@ export class NavigationComponent {
         { title: 'Patient', component: PatientComponent },
         { title: 'Visits', component: PatientComponent },
         { title: 'Prescriptions', component: PrescriptionsComponent },
-        { title: 'Examinations', component: PatientComponent }
+        { title: 'Examinations', component: ExaminationsComponent }
     ];
     this.basicPatientData = {
       firstName: 'Jan',
