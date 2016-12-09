@@ -5,6 +5,8 @@ import { NavigationModule } from './navigation/navigation.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PatientModule } from './patient/patient.module';
 import { PatientComponent } from './patient/patient.component';
+import { PrescriptionsModule } from './prescriptions/prescriptions.module';
+import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 
 @NgModule({
   declarations: [
@@ -13,13 +15,15 @@ import { PatientComponent } from './patient/patient.component';
   imports: [
     IonicModule.forRoot(MyApp),
     NavigationModule,
-    PatientModule
+    PatientModule,
+    PrescriptionsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     NavigationComponent,
-    PatientComponent
+    PatientComponent,
+    PrescriptionsComponent
   ],
   providers: []
 })

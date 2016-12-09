@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { Nav } from 'ionic-angular';
 import { PatientComponent } from '../patient/patient.component';
+import { PrescriptionsComponent } from '../prescriptions/prescriptions.component';
 
 @Component({
   selector: 'navigation',
@@ -20,7 +21,7 @@ export class NavigationComponent {
     this.pages = [
         { title: 'Patient', component: PatientComponent },
         { title: 'Visits', component: PatientComponent },
-        { title: 'Prescriptions', component: PatientComponent },
+        { title: 'Prescriptions', component: PrescriptionsComponent },
         { title: 'Examinations', component: PatientComponent }
     ];
     this.basicPatientData = {

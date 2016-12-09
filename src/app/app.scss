@@ -26,6 +26,10 @@
 .ion-page {
   ion-content {
     position: absolute;
-    top: 57px;
+    margin-top: 47px;
+
+    .scroll-content {
+      padding-bottom: 50px;
+    }
   }
 }
