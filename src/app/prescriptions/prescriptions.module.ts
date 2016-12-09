@@ -18,7 +18,9 @@ import { PrescriptionsListComponent } from './prescriptions-list/prescriptions-l
   exports: [
     PrescriptionsComponent
   ],
-  providers: [ ]
+  entryComponents: [
+    PrescriptionsComponent
+  ]
 })
 
 export class PrescriptionsModule {}

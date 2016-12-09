@@ -18,7 +18,9 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
   exports: [
     PatientComponent
   ],
-  providers: [ ]
+  entryComponents: [
+    PatientComponent
+  ]
 })
 
 export class PatientModule {}

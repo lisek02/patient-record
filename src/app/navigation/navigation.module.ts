@@ -14,7 +14,9 @@ import { NavigationComponent } from './navigation.component';
   exports: [
     NavigationComponent
   ],
-  providers: [ ]
+  entryComponents: [
+    NavigationComponent
+  ]
 })
 
 export class NavigationModule {}
