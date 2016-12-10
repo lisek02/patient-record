@@ -3,6 +3,7 @@ import { IonicModule } from 'ionic-angular';
 import { SharedModule } from '../shared/shared.module';
 import { ExaminationsComponent } from './examinations.component';
 import { ExaminationsSegmentsComponent } from './examinations-segments/examinations-segments.component';
+import { ExaminationsListComponent } from './examinations-segments/examinations-list/examinations-list.component';
 
 @NgModule({
   imports:      [ 
@@ -11,7 +12,8 @@ import { ExaminationsSegmentsComponent } from './examinations-segments/examinati
   ],
   declarations: [
     ExaminationsComponent,
-    ExaminationsSegmentsComponent
+    ExaminationsSegmentsComponent,
+    ExaminationsListComponent
   ],
   exports: [
     ExaminationsComponent

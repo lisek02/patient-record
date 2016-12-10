@@ -1,0 +1,8 @@
+<ion-card class='card-list examinations-list' *ngFor='let examination of examinations'>
+  <ion-card-header>
+    <h2>{{ examination.date | date }}</h2>
+  </ion-card-header>
+  <ion-card-content>
+    <p>{{ examination.name }}</p>
+  </ion-card-content>
+</ion-card>

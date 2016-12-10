@@ -9,14 +9,14 @@
   </ion-segment>
 </div>
 <div [ngSwitch]='selectedTab'>
-  <ion-list *ngSwitchCase="'planned'">
+  <ion-list *ngSwitchCase='"planned"'>
     <ion-item>
-      <h2>Planned</h2>
+      <examinations-list [examinations]='examinations.plannedExaminations'></examinations-list>
     </ion-item>
   </ion-list>
-  <ion-list *ngSwitchCase="'past'">
+  <ion-list *ngSwitchCase='"past"'>
     <ion-item>
-      <h2>Past</h2>
+      <examinations-list [examinations]='examinations.pastExaminations'></examinations-list>
     </ion-item>
   </ion-list>
 </div>

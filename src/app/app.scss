@@ -57,3 +57,27 @@ title-bar {
     }
   }
 }
+
+.card-list { 
+	&.card-md {
+		width: auto;
+		margin: 10px 0;
+	}
+
+	.card-header-md {
+    border-bottom: 1px solid #e8e8e8;
+		padding: 16px 16px 10px 16px;
+
+		h2 {
+    	color: #387ef5;
+		}
+	}
+
+	.card-content-md {
+		padding-top: 16px;
+
+		.item-md {
+			padding-left: 10px;
+		}
+	}
+}
