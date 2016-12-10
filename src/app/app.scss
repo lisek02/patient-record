@@ -15,6 +15,8 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+@import '../theme/variables';
+
 .item-md {
   h2 {
     &.bold {
@@ -30,6 +32,28 @@
 
     .scroll-content {
       padding-bottom: 50px;
+    }
+  }
+}
+
+title-bar {
+  display: inline-block;
+  height: 56px;
+}
+
+.segment {
+  background-color: map-get($colors, primary);
+  margin-top: -3px;
+  position: relative;
+  z-index: 100;
+
+  .segment-md-primary {
+    .segment-button {
+      color: map-get($colors, white-color);
+
+      &.segment-activated {
+        border-color: map-get($colors, white-color);
+      }
     }
   }
 }
