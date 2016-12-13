@@ -81,7 +81,7 @@
     webpack "^2.1.0-beta.25"
     ws "1.1.1"
 
-"@ionic/storage@1.1.6":
+"@ionic/storage@^1.1.6":
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/@ionic/storage/-/storage-1.1.6.tgz#1115d1acbfce0516711b73317f43f01eae04e087"
   dependencies:
@@ -2338,6 +2338,12 @@ rollup@0.36.3:
 rxjs@5.0.0-beta.12, rxjs@^5.0.0-beta.6:
   version "5.0.0-beta.12"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-beta.12.tgz#cdfde2d8c4639d20ae7794bff8fddf32da7ad337"
+  dependencies:
+    symbol-observable "^1.0.1"
+
+rxjs@5.0.0-rc.5:
+  version "5.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-rc.5.tgz#8cbd17fc242a54c07ef9116da23b0ec8e7d5cea9"
   dependencies:
     symbol-observable "^1.0.1"
 

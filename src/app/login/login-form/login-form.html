@@ -1,0 +1,15 @@
+<form (ngSubmit)='submit(loginData)' [formGroup]='loginData'>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Username</ion-label>
+      <ion-input type="text" formControlName='username'></ion-input>
+    </ion-item>
+  <ion-list>
+  </ion-list>
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input type="password" formControlName='password'></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button type='submit' [disabled]='loginData.invalid'>Login</button>
+</form>

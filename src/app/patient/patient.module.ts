@@ -5,7 +5,7 @@ import { PatientComponent } from './patient.component';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 
 @NgModule({
-  imports:      [ 
+  imports: [ 
     SharedModule,
     IonicModule.forRoot(PatientDetailsComponent)
   ],
