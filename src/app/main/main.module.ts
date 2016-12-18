@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { SharedModule } from '../shared/shared.module';
-import { NavigationComponent } from './navigation.component';
+import { MainComponent } from './main.component';
 
 @NgModule({
   imports:      [ 
     SharedModule,
-    IonicModule.forRoot(NavigationComponent)
+    IonicModule
   ],
   declarations: [
-    NavigationComponent,
+    MainComponent,
   ],
   exports: [
-    NavigationComponent
+    MainComponent
   ],
   entryComponents: [
-    NavigationComponent
+    MainComponent
   ]
 })
 
-export class NavigationModule {}
+export class MainModule {}

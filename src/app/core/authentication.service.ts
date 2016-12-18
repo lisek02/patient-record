@@ -6,6 +6,8 @@ import { Storage } from '@ionic/storage';
 
 @Injectable()
 export class AuthenticationService {
+  isAuthenticated: boolean = false;
+  
   constructor(
     private http: Http,
     private constantsService: ConstantsService,
@@ -13,6 +15,14 @@ export class AuthenticationService {
   ) {}
 
   login(user): Observable<any> {
-    return this.http.post(this.constantsService.authUrl, user);
+    const loginRequest = this.http.post(this.constantsService.authUrl, user);
+
+    loginRequest.subscribe(() => {
+      this.isAuthenticated = true;
+    }, () => {
+      this.isAuthenticated = false;
+    });
+
+    return loginRequest;
   }
 }

@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   templateUrl: 'app.component.html'
 })
 
 export class MyApp {
+  root = LoginComponent;
+
   constructor(public platform: Platform) {
     this.initializeApp();
   }

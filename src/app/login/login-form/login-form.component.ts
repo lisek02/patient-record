@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'login-form',
-  templateUrl: './login-form.html'
+  templateUrl: './login-form.html',
+  styles: ['login-form.scss']
 })
 
 export class LoginFormComponent implements OnInit {

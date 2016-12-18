@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AuthenticationService } from '../../core/authentication.service';
 
 @Component({
   selector: 'title-bar',
@@ -7,5 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class TitleBarComponent{
+  constructor(private authenticationService: AuthenticationService) {}
+
   @Input() title: string;
 }

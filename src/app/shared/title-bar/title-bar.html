@@ -1,6 +1,6 @@
 <ion-header class='title-bar'>
   <ion-navbar>
-    <button ion-button menuToggle>
+    <button ion-button menuToggle *ngIf='authenticationService.isAuthenticated'>
       <ion-icon name='menu'></ion-icon>
     </button>
     <ion-title>{{ title }}</ion-title>

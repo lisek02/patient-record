@@ -4,7 +4,7 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { CoreModule } from './core/core.module';
 import { LoginModule } from './login/login.module';
-import { NavigationModule } from './navigation/navigation.module';
+import { MainModule } from './main/main.module';
 import { PatientModule } from './patient/patient.module';
 import { PrescriptionsModule } from './prescriptions/prescriptions.module';
 import { ExaminationsModule } from './examinations/examinations.module';
@@ -17,7 +17,7 @@ import { ExaminationsModule } from './examinations/examinations.module';
     IonicModule.forRoot(MyApp),
     CoreModule,
     LoginModule,
-    NavigationModule,
+    MainModule,
     PatientModule,
     PrescriptionsModule,
     ExaminationsModule

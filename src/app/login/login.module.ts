@@ -6,12 +6,15 @@ import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   imports: [
+    IonicModule,
     SharedModule,
-    IonicModule
   ],
   declarations: [
     LoginComponent,
     LoginFormComponent
+  ],
+  exports: [
+    LoginComponent
   ],
   entryComponents: [
     LoginComponent

@@ -1,0 +1,23 @@
+@import '../../../theme/variables.scss';
+
+.list-md {
+  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    border-bottom-color: $input-border-grey;
+    box-shadow: none;
+  }
+
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: $input-border-grey;
+    box-shadow: none;
+  }
+
+  .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+    border-bottom-color: $input-border-grey;
+    box-shadow: none;
+  }
+
+  .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+    border-bottom-color: $input-border-grey;
+    box-shadow: none;
+  }
+}

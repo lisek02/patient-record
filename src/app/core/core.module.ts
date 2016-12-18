@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ConstantsService} from './constants.service';
+import { ConstantsService } from './constants.service';
 import { AuthenticationService } from './authentication.service';
 
 @NgModule({

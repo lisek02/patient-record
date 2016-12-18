@@ -1,19 +1,18 @@
 import { Component, ViewChild } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { Nav } from 'ionic-angular';
-import { LoginComponent } from '../login/login.component';
 import { PatientComponent } from '../patient/patient.component';
 import { PrescriptionsComponent } from '../prescriptions/prescriptions.component';
 import { ExaminationsComponent } from '../examinations/examinations.component';
 
 @Component({
-  selector: 'navigation',
-  templateUrl: 'navigation.html',
-  styles: ['navigation.scss'],
+  selector: 'main',
+  templateUrl: 'main.html',
+  styles: ['main.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 
-export class NavigationComponent {
+export class MainComponent {
   @ViewChild(Nav) nav: Nav;
   rootPage: any = PatientComponent;
   pages: Array<{title: string, component: any}>;
@@ -21,7 +20,6 @@ export class NavigationComponent {
 
   constructor() {
     this.pages = [
-        { title: 'Login', component: LoginComponent },
         { title: 'Patient', component: PatientComponent },
         { title: 'Visits', component: PatientComponent },
         { title: 'Prescriptions', component: PrescriptionsComponent },
