@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { NavController } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
 import { MainComponent } from '../main/main.component';
 import { AuthenticationService } from '../core/authentication.service';
 
@@ -17,12 +18,12 @@ export class LoginComponent {
   ) {}
 
   login(user) {
-    this.authenticationService.login(user)
-      .subscribe(response => {
-        this.storage.set('token', JSON.parse(response._body).token);
-        this.nav.setRoot(MainComponent);
-      }, err => {
-        console.log(err);
-      })
+    this.authenticationService.login(user).flatMap(response => {
+      return this.setToken(JSON.parse(response._body).token);
+    }).subscribe(() => this.nav.setRoot(MainComponent));
+  }
+
+  private setToken(token): Observable<any> {
+    return Observable.fromPromise(this.storage.set('token', token));
   }
 }

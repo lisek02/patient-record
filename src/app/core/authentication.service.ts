@@ -6,23 +6,29 @@ import { Storage } from '@ionic/storage';
 
 @Injectable()
 export class AuthenticationService {
-  isAuthenticated: boolean = false;
+  isUserAuthenticated: Observable<any>;
   
   constructor(
     private http: Http,
     private constantsService: ConstantsService,
     private storage: Storage
-  ) {}
+  ) {
+    this.isUserAuthenticated = Observable.fromPromise(this.storage.get('token'));
+  }
 
   login(user): Observable<any> {
-    const loginRequest = this.http.post(this.constantsService.authUrl, user);
+    return this.http.post(this.constantsService.authUrl, user);
+  }
 
-    loginRequest.subscribe(() => {
-      this.isAuthenticated = true;
-    }, () => {
-      this.isAuthenticated = false;
-    });
+  logout(): Observable<any> {
+    return Observable.fromPromise(this.storage.remove('token')
+      .then((response) => {
+        return response;
+      })
+    );
+  }
 
-    return loginRequest;
+  isAuthenticated(): Observable<any> {
+    return Observable.fromPromise(this.storage.get('token'));
   }
 }

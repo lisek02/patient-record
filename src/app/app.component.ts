@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { AuthenticationService } from './core/authentication.service';
+import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 
 @Component({
@@ -8,9 +10,15 @@ import { LoginComponent } from './login/login.component';
 })
 
 export class MyApp {
-  root = LoginComponent;
+  root: Component;
 
-  constructor(public platform: Platform) {
+  constructor(
+    public platform: Platform,
+    private authenticationService: AuthenticationService
+  ) {
+    this.authenticationService.isAuthenticated().subscribe(response => {
+      return this.root = !!response ? MainComponent : LoginComponent;
+    });
     this.initializeApp();
   }
 
