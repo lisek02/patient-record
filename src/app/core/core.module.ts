@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { ConstantsService } from './constants.service';
 import { AuthenticationService } from './authentication.service';
-import { PrescriptionsService } from './prescriptions.service';
+import { RequestsService } from './requests.service';
 
 @NgModule({
   providers: [
     ConstantsService,
     AuthenticationService,
-    PrescriptionsService
+    RequestsService
   ]
 })
 

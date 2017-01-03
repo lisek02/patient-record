@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PrescriptionsService } from '../core/prescriptions.service';
+import { RequestsService } from '../core/requests.service';
 import Prescription from './prescription.model';
 
 @Component({
@@ -11,9 +11,9 @@ export class PrescriptionsComponent {
   private prescriptionsData: Prescription[];
 
   constructor(
-    private prescriptionsService: PrescriptionsService
+    private requestsService: RequestsService
   ) {
-    this.prescriptionsService.getPrescriptions()
+    this.requestsService.get('prescription')
       .subscribe((response: any) => {
         this.prescriptionsData = JSON.parse(response._body);
       });
