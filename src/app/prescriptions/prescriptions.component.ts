@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PrescriptionsService } from '../core/prescriptions.service';
 import Prescription from './prescription.model';
 
 @Component({
@@ -9,28 +10,12 @@ import Prescription from './prescription.model';
 export class PrescriptionsComponent {
   private prescriptionsData: Prescription[];
 
-  constructor() {
-    this.prescriptionsData = [
-      {
-        date: new Date(2006, 3, 4),
-        doctor: 'Han Solo',
-        drugs: ['Aspiryna 20mg', 'Witamina C 500mg', 'Ibuprom']
-      },
-      {
-        date: new Date(2008, 3, 6),
-        doctor: 'Leia Organa',
-        drugs: ['Witamina C 500mg', 'Aspiryna 20mg', 'Ibuprom', 'Magnez']
-      },
-      {
-        date: new Date(2009, 11, 4),
-        doctor: 'Luke Skywalker',
-        drugs: ['Ibuprom', 'Aspiryna 20mg', 'Witamina C 500mg', 'Coś tam']
-      },
-      {
-        date: new Date(2006, 3, 4),
-        doctor: 'Han Solo',
-        drugs: ['Aspiryna 20mg', 'Witamina C 500mg', 'Ibuprom']
-      }
-    ]
+  constructor(
+    private prescriptionsService: PrescriptionsService
+  ) {
+    this.prescriptionsService.getPrescriptions()
+      .subscribe((response: any) => {
+        this.prescriptionsData = JSON.parse(response._body);
+      });
   }
 }
