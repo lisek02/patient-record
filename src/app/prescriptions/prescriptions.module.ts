@@ -3,6 +3,7 @@ import { IonicModule } from 'ionic-angular';
 import { SharedModule } from '../shared/shared.module';
 import { PrescriptionsComponent } from './prescriptions.component';
 import { PrescriptionsListComponent } from './prescriptions-list/prescriptions-list.component';
+import { PrescriptionDetailsComponent } from './prescription-details/prescription-details.component';
 
 @NgModule({
   imports:      [ 
@@ -11,13 +12,15 @@ import { PrescriptionsListComponent } from './prescriptions-list/prescriptions-l
   ],
   declarations: [
     PrescriptionsComponent,
-    PrescriptionsListComponent
+    PrescriptionsListComponent,
+    PrescriptionDetailsComponent
   ],
   exports: [
     PrescriptionsComponent
   ],
   entryComponents: [
-    PrescriptionsComponent
+    PrescriptionsComponent,
+    PrescriptionDetailsComponent
   ]
 })
 

@@ -1,0 +1,22 @@
+<title-bar [title]='"Prescription details"'></title-bar>
+<ion-content padding>
+  <ion-card class='card-list prescriptions-list'>
+    <ion-card-header>
+      <h2>{{ prescription.issue_date | date }} by {{ prescription.doctor.first_name }} {{ prescription.doctor.last_name }}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor='let entry of prescription.prescription_entries'>
+          <p>{{ entry.name }} {{ entry.quantity }}{{entry.unit}}</p>
+        </ion-item>
+        <ion-item>
+          <p>Expires: {{ prescription.expiration_date | date }}</p>
+        </ion-item>
+        <ion-item>
+          <img src='https://s26.postimg.org/ebigxp4t5/kod_kreskowy_numer_wczesniej.jpg'>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

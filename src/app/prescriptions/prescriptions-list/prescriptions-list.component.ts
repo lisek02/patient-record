@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { PrescriptionDetailsComponent } from '../prescription-details/prescription-details.component';
 import Prescription from '../prescription.model';
 
 @Component({
@@ -9,4 +11,12 @@ import Prescription from '../prescription.model';
 
 export class PrescriptionsListComponent {
   @Input() prescriptions: Prescription[];
+
+  constructor(
+    private navController: NavController
+  ) {}
+
+  openPrescription(prescription) {
+    this.navController.push(PrescriptionDetailsComponent, { prescription });
+  }
 }
