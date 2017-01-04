@@ -1,0 +1,8 @@
+<ion-card class='card-list visits-list' *ngFor='let visit of visits'>
+  <ion-card-header>
+    <h2>{{ visit.time | date }}</h2>
+  </ion-card-header>
+  <ion-card-content>
+    <p>{{ visit.description | slice:0:40 }}...</p>
+  </ion-card-content>
+</ion-card>

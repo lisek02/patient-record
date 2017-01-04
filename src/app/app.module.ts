@@ -8,6 +8,7 @@ import { MainModule } from './main/main.module';
 import { PatientModule } from './patient/patient.module';
 import { PrescriptionsModule } from './prescriptions/prescriptions.module';
 import { ExaminationsModule } from './examinations/examinations.module';
+import { VisitsModule } from './visits/visits.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ExaminationsModule } from './examinations/examinations.module';
     MainModule,
     PatientModule,
     PrescriptionsModule,
-    ExaminationsModule
+    ExaminationsModule,
+    VisitsModule
   ],
   bootstrap: [
     IonicApp

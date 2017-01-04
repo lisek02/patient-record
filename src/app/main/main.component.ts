@@ -6,6 +6,7 @@ import { AuthenticationService } from '../core/authentication.service';
 import { LoginComponent } from '../login/login.component';
 import { PrescriptionsComponent } from '../prescriptions/prescriptions.component';
 import { ExaminationsComponent } from '../examinations/examinations.component';
+import { VisitsComponent } from '../visits/visits.component';
 
 @Component({
   selector: 'main',
@@ -25,7 +26,7 @@ export class MainComponent {
   ) {
     this.pages = [
         { title: 'Patient', component: PatientComponent },
-        { title: 'Visits', component: PatientComponent },
+        { title: 'Visits', component: VisitsComponent },
         { title: 'Prescriptions', component: PrescriptionsComponent },
         { title: 'Examinations', component: ExaminationsComponent }
     ];

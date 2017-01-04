@@ -12,6 +12,5 @@ export class PrescriptionDetailsComponent {
     private navParams: NavParams
   ) {
     this.prescription = this.navParams.get('prescription');
-    console.log(this.prescription);
   }
 }

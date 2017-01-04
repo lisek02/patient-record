@@ -1,0 +1,22 @@
+<div class='segment' padding>
+  <ion-segment [(ngModel)]='selectedTab' color='primary'>
+    <ion-segment-button value='planned'>
+      Planned
+    </ion-segment-button>
+    <ion-segment-button value='past'>
+      Past
+    </ion-segment-button>
+  </ion-segment>
+</div>
+<div [ngSwitch]='selectedTab'>
+  <ion-list *ngSwitchCase='"planned"'>
+    <ion-item>
+      <visits-list [visits]='plannedVisits | async'></visits-list>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngSwitchCase='"past"'>
+    <ion-item>
+      <visits-list [visits]='pastVisits | async'></visits-list>
+    </ion-item>
+  </ion-list>
+</div>
