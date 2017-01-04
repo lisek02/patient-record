@@ -1,0 +1,12 @@
+<title-bar [title]='"Visit details"'></title-bar>
+<ion-content padding>
+  <ion-card class='card-list visits-list'>
+    <ion-card-header>
+      <h2>{{ visit.time | date }}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ visit.description }}</p>
+      <p>Lekarz: {{ visit.doctor.first_name }} {{ visit.doctor.last_name }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

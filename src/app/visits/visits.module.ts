@@ -4,6 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 import { VisitsComponent } from './visits.component';
 import { VisitsSegmentsComponent } from './visits-segments/visits-segments.component';
 import { VisitsListComponent } from './visits-segments/visits-list/visits-list.component';
+import { VisitDetailsComponent } from './visit-details/visit-details.component';
 
 @NgModule({
   imports:      [ 
@@ -13,13 +14,15 @@ import { VisitsListComponent } from './visits-segments/visits-list/visits-list.c
   declarations: [
     VisitsComponent,
     VisitsSegmentsComponent,
-    VisitsListComponent
+    VisitsListComponent,
+    VisitDetailsComponent
   ],
   exports: [
     VisitsComponent
   ],
   entryComponents: [
-    VisitsComponent
+    VisitsComponent,
+    VisitDetailsComponent    
   ]
 })
 
