@@ -1,15 +1,20 @@
-<ion-card class='card-list prescriptions-list' *ngFor='let prescription of prescriptions' (click)='openPrescription(prescription)'>
-  <ion-card-header>
-    <h2>{{ prescription.issue_date | date }} by {{ prescription.doctor.first_name }} {{ prescription.doctor.last_name }}</h2>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-list>
-      <ion-item *ngFor='let entry of (prescription.prescription_entries.slice(0,2))'>
-        <p>{{ entry.name }} {{ entry.quantity }}{{entry.unit}}</p>
-      </ion-item>
-      <ion-item>
-        <ion-icon name='ios-more'></ion-icon>
-      </ion-item>
-    </ion-list>
-  </ion-card-content>
-</ion-card>
+<div>
+  <spinner *ngIf='!prescriptions'></spinner>
+  <div *ngIf='!!prescriptions'>
+    <ion-card class='card-list prescriptions-list' *ngFor='let prescription of prescriptions' (click)='openPrescription(prescription)'>
+      <ion-card-header>
+        <h2>{{ prescription.issue_date | date }} by {{ prescription.doctor.first_name }} {{ prescription.doctor.last_name }}</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor='let entry of (prescription.prescription_entries.slice(0,2))'>
+            <p>{{ entry.name }} {{ entry.quantity }}{{entry.unit}}</p>
+          </ion-item>
+          <ion-item>
+            <ion-icon name='ios-more'></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</div>
