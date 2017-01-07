@@ -1,0 +1,32 @@
+<title-bar [title]='"Examination details"'></title-bar>
+<ion-content padding>
+  <ion-card class='card-list examination-list'>
+    <ion-card-header>
+      <h2>{{ examination.time | date }}, {{ examination.name }}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Lekarz: {{ examination.doctor.first_name }} {{ examination.doctor.last_name }}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class='card-list examination-list' *ngIf='examination.test_entries.length > 0'>
+    <ion-card-header>
+      <h2>Wyniki badań</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-lines>
+        <button ion-item *ngFor='let entry of examination.test_entries'>
+          {{ entry.name }}: {{ entry.value }}{{ entry.unit }}
+        </button> 
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class='card-list examination-list' *ngFor='let imageObject of examination.test_images; let i = index'>
+    <ion-card-header>
+      <h2>Załącznik {{ i+1 }}: {{ imageObject.summary }}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ imageObject.description }}</p>
+      <img [src]='imageObject.image'>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
