@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import Examination from '../examination.model';
 
 @Component({
@@ -7,7 +8,14 @@ import Examination from '../examination.model';
 })
 
 export class ExaminationsSegmentsComponent {
-  @Input() examinations: { pastExaminations: Examination[], plannedExaminations: Examination[] };
+  @Input() examinations: Observable<Examination>[];
 
+  pastExaminations: Observable<Examination[]>;
+  plannedExaminations: Observable<Examination[]>;
   selectedTab: string = 'planned';
+
+  ngOnInit() {
+    this.pastExaminations = this.examinations[0].toArray();
+    this.plannedExaminations = this.examinations[1].toArray();
+  }
 }

@@ -11,12 +11,12 @@
 <div [ngSwitch]='selectedTab'>
   <ion-list *ngSwitchCase='"planned"'>
     <ion-item>
-      <examinations-list [examinations]='examinations.plannedExaminations'></examinations-list>
+      <examinations-list [examinations]='plannedExaminations | async'></examinations-list>
     </ion-item>
   </ion-list>
   <ion-list *ngSwitchCase='"past"'>
     <ion-item>
-      <examinations-list [examinations]='examinations.pastExaminations'></examinations-list>
+      <examinations-list [examinations]='pastExaminations | async'></examinations-list>
     </ion-item>
   </ion-list>
 </div>

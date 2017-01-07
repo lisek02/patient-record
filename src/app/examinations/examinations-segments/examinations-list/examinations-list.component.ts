@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { NavController } from 'ionic-angular';
+// import { ExaminationDetailsComponent } from '../../examination-details/examination-details.component';
 import Examination from '../../examination.model';
 
 @Component({
@@ -8,4 +10,13 @@ import Examination from '../../examination.model';
 
 export class ExaminationsListComponent {
   @Input() examinations: Examination[];
+
+  constructor(
+    private navController: NavController
+  ) {}
+
+  openExamination(examination) {
+    console.log(examination);
+    // this.navController.push(ExaminationDetailsComponent, { visit });
+  }
 }
