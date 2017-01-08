@@ -1,18 +1,25 @@
-<ion-list>
-  <ion-item>
-    <h2 class='bold'>Name</h2>
-    <p>{{ patient.firstName }} {{ patient.lastName }}</p>
-  </ion-item>
-  <ion-item>
-    <h2 class='bold'>Birth date</h2>
-    <p>{{ patient.birthDate | date }}</p>
-  </ion-item>
-  <ion-item>
-    <h2 class='bold'>Gender</h2>
-    <p>{{ patient.gender }}</p>
-  </ion-item>
-  <ion-item>
-    <h2 class='bold'>Address</h2>
-    <p>{{ patient.address }}, {{ patient.postalCode }} {{ patient.city }}</p>
-  </ion-item>
-</ion-list>
+<div>
+  <spinner *ngIf='!patient'></spinner>
+  <ion-list *ngIf='!!patient'>
+    <ion-item>
+      <h2 class='bold'>Name</h2>
+      <p>{{ patient.first_name }} {{ patient.last_name }}</p>
+    </ion-item>
+    <ion-item>
+      <h2 class='bold'>Pesel</h2>
+      <p>{{ patient.profile.pesel }}</p>
+    </ion-item>
+    <ion-item>
+      <h2 class='bold'>Birth date</h2>
+      <p>{{ patient.profile.birth_date | date }}</p>
+    </ion-item>
+    <ion-item>
+      <h2 class='bold'>Gender</h2>
+      <p>{{ patient.profile.gender }}</p>
+    </ion-item>
+    <ion-item>
+      <h2 class='bold'>Address</h2>
+      <p>{{ patient.profile.address }}, {{ patient.profile.zip_code }} {{ patient.profile.city }}</p>
+    </ion-item>
+  </ion-list>
+</div>

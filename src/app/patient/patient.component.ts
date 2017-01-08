@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RequestsService } from '../core/requests.service';
+import { Observable } from 'rxjs/Observable';
 import Patient from './patient.model';
 
 @Component({
@@ -7,18 +9,12 @@ import Patient from './patient.model';
 })
 
 export class PatientComponent {
-  private patientData: Patient;
+  private patientData: Observable<Patient>;
 
-  constructor() {
-    this.patientData = {
-      firstName: 'Jan',
-      lastName: 'Kowalski',
-      birthDate: new Date(1992, 3, 4),
-      gender: 'Male',
-      address: 'Dąbrowskiego 34',
-      postalCode: '61-123',
-      city: 'Poznań',
-      image: 'assets/images/mr_potatoe.png'
-    }
-  }
+  constructor(
+    private requestsService: RequestsService
+  ) {
+    this.patientData = this.requestsService.get('current_user')
+      .map((response: any) => response.json());
+  };
 }
