@@ -13,11 +13,11 @@
       <h2>Wyniki badań</h2>
     </ion-card-header>
     <ion-card-content>
-      <ion-list no-lines>
-        <button ion-item *ngFor='let entry of examination.test_entries'>
+      <ul>
+        <li *ngFor='let entry of examination.test_entries'>
           {{ entry.name }}: {{ entry.value }}{{ entry.unit }}
-        </button> 
-      </ion-list>
+        </li> 
+      </ul>
     </ion-card-content>
   </ion-card>
   <ion-card class='card-list examination-list' *ngFor='let imageObject of examination.test_images; let i = index'>
