@@ -1,0 +1,7 @@
+<div *ngIf='!!patient && !!patient.profile'>
+  <ion-avatar item-left large-avatar>
+    <img *ngIf='!!patient.profile.avatar' src='{{ patient.profile.avatar }}'>
+    <ion-icon class='avatar-icon' *ngIf='!patient.profile.avatar' name='contact'></ion-icon>
+  </ion-avatar>
+  <h1>{{ patient.first_name }} {{ patient.last_name }}</h1>
+</div>

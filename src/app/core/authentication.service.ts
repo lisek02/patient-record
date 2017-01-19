@@ -31,4 +31,8 @@ export class AuthenticationService {
   isAuthenticated(): Observable<any> {
     return Observable.fromPromise(this.storage.get('token'));
   }
+
+  getCurrentUser(): Observable<any> {
+    return Observable.fromPromise(this.storage.get('user'));
+  }
 }

@@ -1,12 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { Nav } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
 import { PatientComponent } from '../patient/patient.component';
 import { AuthenticationService } from '../core/authentication.service';
 import { LoginComponent } from '../login/login.component';
 import { PrescriptionsComponent } from '../prescriptions/prescriptions.component';
 import { ExaminationsComponent } from '../examinations/examinations.component';
 import { VisitsComponent } from '../visits/visits.component';
+import { RequestsService } from '../core/requests.service';
+import Patient from '../patient/patient.model';
 
 @Component({
   selector: 'main',
@@ -19,10 +22,11 @@ export class MainComponent {
   @ViewChild(Nav) nav: Nav;
   rootPage: any = PatientComponent;
   pages: Array<{title: string, component: any}>;
-  basicPatientData: { firstName: string, lastName: string, image: string };
+  patientData: Observable<Patient>;
 
   constructor(
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private requestsService: RequestsService
   ) {
     this.pages = [
         { title: 'Patient', component: PatientComponent },
@@ -30,11 +34,7 @@ export class MainComponent {
         { title: 'Prescriptions', component: PrescriptionsComponent },
         { title: 'Examinations', component: ExaminationsComponent }
     ];
-    this.basicPatientData = {
-      firstName: 'Jan',
-      lastName: 'Kowalski',
-      image: 'assets/images/mr_potatoe.png'
-    }
+    this.patientData = this.authenticationService.getCurrentUser();
   }
 
   openPage(page) {

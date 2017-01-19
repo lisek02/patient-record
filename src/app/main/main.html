@@ -2,10 +2,7 @@
   <ion-header>
     <ion-list no-lines>
       <ion-item>
-        <ion-avatar item-left large-avatar>
-          <img src='{{ basicPatientData.image }}'>
-        </ion-avatar>
-        <h1>{{ basicPatientData.firstName }} {{ basicPatientData.lastName }}</h1>
+        <avatar [patient]='patientData | async'></avatar>
       </ion-item>
     </ion-list>
   </ion-header>
