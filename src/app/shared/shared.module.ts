@@ -4,6 +4,7 @@ import { IonicModule } from 'ionic-angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TitleBarComponent } from './title-bar/title-bar.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { GenderPipe } from './pipes/gender.pipe';
 
 @NgModule({
   imports:      [ 
@@ -13,13 +14,15 @@ import { SpinnerComponent } from './spinner/spinner.component';
   ],
   declarations: [
     TitleBarComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    GenderPipe
   ],
   exports: [
     CommonModule,
     ReactiveFormsModule,
     TitleBarComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    GenderPipe
   ],
   providers: [ ]
 })
