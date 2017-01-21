@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RequestsService } from '../core/requests.service';
 import { Observable } from 'rxjs/Observable';
-import Visit from './visit.model';
 
 @Component({
   selector: 'visits',
@@ -9,7 +8,8 @@ import Visit from './visit.model';
 })
 
 export class VisitsComponent {
-  visitsData: Observable<Visit>[];
+  // TO DO check types
+  visitsData: Observable<{}>[];
 
   constructor(
     private requestsService: RequestsService

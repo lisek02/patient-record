@@ -8,7 +8,7 @@ import Prescription from './prescription.model';
 })
 
 export class PrescriptionsComponent {
-  private prescriptionsData: Prescription[];
+  prescriptionsData: Prescription[];
 
   constructor(
     private requestsService: RequestsService

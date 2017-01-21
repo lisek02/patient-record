@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RequestsService } from '../core/requests.service';
 import { Observable } from 'rxjs/Observable';
-import Examination from './examination.model';
 
 @Component({
   selector: 'examinations',
@@ -9,7 +8,8 @@ import Examination from './examination.model';
 })
 
 export class ExaminationsComponent {
-  examinationsData: Observable<Examination>[];
+  // TO DO check types
+  examinationsData: Observable<{}>[];
 
   constructor(
     private requestsService: RequestsService
