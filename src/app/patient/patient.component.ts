@@ -12,7 +12,7 @@ import Patient from './patient.model';
 
 export class PatientComponent implements OnDestroy {
   patientData: Observable<Patient>;
-  patientSubscription: Subscription
+  patientSubscription: Subscription;
   patient: Patient;
 
   constructor(
@@ -30,6 +30,8 @@ export class PatientComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.patientSubscription.unsubscribe();
+    if (!!this.patientSubscription) {
+      this.patientSubscription.unsubscribe();
+    }
   }
 }

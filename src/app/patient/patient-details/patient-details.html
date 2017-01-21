@@ -1,6 +1,9 @@
 <div>
   <spinner *ngIf='!patient'></spinner>
   <ion-list *ngIf='!!patient'>
+    <ion-item class='patient-image' *ngIf='!!patient.profile.avatar'>
+      <img [src]='patient.profile.avatar'>
+    </ion-item>
     <ion-item>
       <h2 class='bold'>Name</h2>
       <p>{{ patient.first_name }} {{ patient.last_name }}</p>
