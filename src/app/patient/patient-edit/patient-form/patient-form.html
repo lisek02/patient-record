@@ -1,0 +1,23 @@
+<form (ngSubmit)='submit(userData.value)' [formGroup]='userData'>
+  <div formGroupName='profile'>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Street</ion-label>
+        <ion-input type="text" formControlName='address'></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Zip code</ion-label>
+        <ion-input type="text" formControlName='zip_code'></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>City</ion-label>
+        <ion-input type="text" formControlName='city'></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div padding>
+    <button ion-button full type='submit' [disabled]='userData.invalid'>
+      Update
+    </button>
+  </div>
+</form>

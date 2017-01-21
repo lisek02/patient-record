@@ -20,4 +20,14 @@ export class RequestsService {
       return this.http.get(`${this.constantsService.apiUrl}${requestPath}/`, options);
     });
   }
+
+  put(requestPath, data) {
+    return this.authenticationService.isAuthenticated().flatMap(token => {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      headers.append('Authorization', `Token ${token}`);
+      let options = new RequestOptions({ headers: headers });
+
+      return this.http.put(`${this.constantsService.apiUrl}${requestPath}/`, data, options);
+    });
+  }
 }

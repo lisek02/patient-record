@@ -3,5 +3,5 @@
   <patient-details [patient]='patientData | async'></patient-details>
 </ion-content>
 <ion-fab right bottom>
-  <button ion-fab><ion-icon name="create"></ion-icon></button>
+  <button ion-fab (click)='editUser()'><ion-icon name="create"></ion-icon></button>
 </ion-fab>

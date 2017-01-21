@@ -14,6 +14,5 @@ export class ExaminationDetailsComponent {
     private navParams: NavParams
   ) {
     this.examination = this.navParams.get('examination');
-    console.log(this.examination);
   }
 }

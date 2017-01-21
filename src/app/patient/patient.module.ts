@@ -3,6 +3,8 @@ import { IonicModule } from 'ionic-angular';
 import { SharedModule } from '../shared/shared.module';
 import { PatientComponent } from './patient.component';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
+import { PatientEditComponent } from './patient-edit/patient-edit.component';
+import { PatientFormComponent } from './patient-edit/patient-form/patient-form.component';
 
 @NgModule({
   imports: [ 
@@ -11,13 +13,16 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
   ],
   declarations: [
     PatientComponent,
-    PatientDetailsComponent
+    PatientDetailsComponent,
+    PatientFormComponent,
+    PatientEditComponent
   ],
   exports: [
     PatientComponent
   ],
   entryComponents: [
-    PatientComponent
+    PatientComponent,
+    PatientEditComponent
   ]
 })
 
