@@ -39,10 +39,8 @@ export class MainComponent {
 
   openPage(page) {
     this.authenticationService.isAuthenticated().subscribe((token) => {
-      !!token ? this.nav.setRoot(page.component) : this.nav.setRoot(LoginComponent);
+      !!token ? this.nav.push(page.component) : this.nav.setRoot(LoginComponent);
     });
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
   }
 
   logOut() {
